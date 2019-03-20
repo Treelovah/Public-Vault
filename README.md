@@ -1,2 +1,2 @@
 # Scripts
-Personal Scripts for practice and just to make my life easier
+Personal Bash and Python Scripts for practice and just to make my life easier

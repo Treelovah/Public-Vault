@@ -1,0 +1,1 @@
+echo "test -a echo"

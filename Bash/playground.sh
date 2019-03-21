@@ -1,1 +1,1 @@
-echo "test -a echo"
+#!/usr/bin/env bash

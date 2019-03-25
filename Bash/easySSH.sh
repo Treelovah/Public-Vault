@@ -1,4 +1,5 @@
-#! /bin/bash
+#!/usr/bin/env bash
+
 # Author: @Treelovah
 # Web: https://www.kryptsec.com
 # Script to prompt ssh connection

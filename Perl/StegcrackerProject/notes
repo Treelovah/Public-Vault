@@ -1,0 +1,18 @@
+First official day researching after learning a bit about the language, i have some ideas.
+
+First note is that the 'steghide' program will need to be called every single time, this in and of itself is the bottleneck of our program. 
+
+~~if we can get someone more experienced in cryptography, we may be able to rewrite this program without the need of steghide, which would drastically increase the performance.. this is a theory.~~
+
+---------------------------------------------------------
+START
+# call steghide
+# set up steghide to receive input from loop
+# write a while loop that goes through word list and passes passwords to steghide parameters
+# create conditional that pumps errors to /dev/null or print password if correct.
+INTERMEDIATE
+# create a visual percentage timer that will show how much of the list has been used
+# create options for other word lists
+# clean up code
+ADVANCED
+# TBD

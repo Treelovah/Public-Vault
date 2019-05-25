@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+##EDIT THIS TO FIT YOUR NEEDS##
+#-----------------------|
+USR='tr331337'         #|
+PASSWD='#3m1n3l09!!'   #|
+IP='192.168.1.10'      #|
+#-----------------------|
+
+#-----------------------#
+#----DONT TOUCH THIS----#
+#-----------------------#
+REPLY="$1"
+main() {
+    if [ -f "$REPLY" ] ; then
+	    $(backup)
+        exit 0
+    else
+        echo "Please add the file{s} as the parameter to this script. example './backup document1.txt' "
+        exit 1
+    fi
+}
+backup() {
+	`curl -T $REPLY ftp://$IP/files/backups/$REPLY --user $USR:$PASSWD`
+
+}
+[ -z "$REPLY" ] && echo "Please add a file to the 'backup.sh' parameter. example: './backup document1.txt' " || main 

@@ -25,6 +25,7 @@ class Astrologer:
         return '{} {}'.format(self.first, self.last)
     
     def business_card(self, name, email):
+        # just cuz.
         return "+--------------------------------------+\n| CSU Astrology                        |\n| Rams for the Stars                   |\n|                                      |\n|                                      |" + "\n|\t    " + name + "        |" + "\n|\t    " + email + " |" + "\n+--------------------------------------+"
 
     def aries(self):

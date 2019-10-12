@@ -18,7 +18,7 @@ class Astrologer:
         self.first = first
         self.last = last
         self.email = 'mltechi@rams.colostate.edu'
-        # The assignment below is more ideal..just not as pretty
+        # The comment below is more ideal and should be used instead..also its just not as pretty
         # self.email = first + "." + last + "@rams.colostate.edu"
 
     def fullname(self):

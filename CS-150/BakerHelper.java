@@ -68,7 +68,7 @@ public class BakerHelper {
       System.out.println(CUPS_FLOUR_PER_CAKE);
       System.out.println(PIECES_PER_CAKE);
 
-      System.out.println("#### Testing calcNumCakesBaked");
+      System.out.println("#### Testing calcNumCakesBaked ####");
       System.out.println(calcNumCakesBaked(0));
       System.out.println(calcNumCakesBaked(2.3));
       System.out.println(calcNumCakesBaked(3));

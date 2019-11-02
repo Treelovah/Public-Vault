@@ -14,3 +14,5 @@ import random
 
 class Eight_Ball:
     pass
+    #what to pass here>??
+    

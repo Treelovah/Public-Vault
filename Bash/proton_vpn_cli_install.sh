@@ -5,6 +5,8 @@
 # dont forget it.
 echo "This is not a go get coffee script, I need you babe."
 sleep 2
+echo "Make sure to have a network connection, or you will receive errors."
+sleep 2
 echo "updating first"
 sleep 1
 sudo pacman -Syyu

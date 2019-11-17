@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1573942504 source:/home/tr33/Programs/Scripts/CPP/mult_file_compile/Math.cpp
+	"math.h"
+
+1573837971 source:/home/tr33/Programs/Scripts/CPP/mult_file_compile/main.cpp
+	<iostream>
+
+1573837923 source:/home/tr33/Programs/Scripts/CPP/mult_file_compile/Input.cpp
+	<iostream>
+
+1573943505 /home/tr33/Programs/Scripts/CPP/mult_file_compile/math.h
+

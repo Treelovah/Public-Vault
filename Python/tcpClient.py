@@ -1,13 +1,18 @@
 import socket
+import sys
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+try:
+    ip = socket.gethostbyname('kryptsec.com')
+    print(ip)
+except socket.error as err:
+    print("socket creation failed with error %s" %(err))
+port = 80
+try:
+    host_ip = socket.gethostbyname('kryptsec.com')
+except socket.gaierror:
+    print("There was an eror resloving the host")
+    sys.exit()
 
-target_host = "www.kryptsec.com"
-target_port = 80
-client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect((host_ip, port))
 
-client.connect((target_host, target_port))
-
-client.send("GET / HTTP/1.1\r\nHost:kryptsec.com\r\n\r\n")
-
-response = client.recv(4096)
-
-print(response)
+print("the socket has successfully connected to kryptsec on port == %s:%d" %(host_ip, port))

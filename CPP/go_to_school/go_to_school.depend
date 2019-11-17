@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1574027703 source:/home/tr33/Programs/Scripts/CPP/go_to_school/main.cpp
+	<iostream>
+	"included_files.h"
+
+1574027737 source:/home/tr33/Programs/Scripts/CPP/go_to_school/bathroom.cpp
+	<iostream>
+	"included_files.h"
+
+1574027683 source:/home/tr33/Programs/Scripts/CPP/go_to_school/bedroom.cpp
+	<iostream>
+	"included_files.h"
+
+1574027682 source:/home/tr33/Programs/Scripts/CPP/go_to_school/kaycee.cpp
+	<iostream>
+	"included_files.h"
+
+1574027681 source:/home/tr33/Programs/Scripts/CPP/go_to_school/leave.cpp
+	<iostream>
+	"included_files.h"
+
+1574027935 /home/tr33/Programs/Scripts/CPP/go_to_school/included_files.h
+
+1574027682 source:/home/tr33/Programs/Scripts/CPP/go_to_school/kitchen.cpp
+	<iostream>
+	"included_files.h"
+

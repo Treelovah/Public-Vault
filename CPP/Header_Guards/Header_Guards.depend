@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1573945589 source:/home/tr33/Programs/Scripts/CPP/Header_Guards/main.cpp
+	<iostream>
+	"square.h"
+	"geometry.h"
+
+1573945808 /home/tr33/Programs/Scripts/CPP/Header_Guards/square.h
+
+1573945591 source:/home/tr33/Programs/Scripts/CPP/Header_Guards/square.cpp
+	<iostream>
+	"square.h"
+	"geometry.h"
+
+1573945600 /home/tr33/Programs/Scripts/CPP/Header_Guards/geometry.h
+	"square.h"
+

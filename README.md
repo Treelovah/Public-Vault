@@ -1,2 +1,3 @@
 # Scripts
-Personal Bash and Python Scripts for practice and just to make my life easier
+Personal Bash,Python, C, CPP, and Java  Scripts & Programs for practice, education, and just to make my life easier.
+

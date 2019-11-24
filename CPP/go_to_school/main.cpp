@@ -1,16 +1,17 @@
 #include <iostream>
-#include "included_files.h"
+#include "school.h"
+
 // Go To School
-// get out of bed
-// shower
-// brush teeth
-// pick up clothes
-// get dressed
-// make breakfast
-// make coffee
-// clean up kitchen
-// take kaycee for walk
-// leave for school
+    // get out of bed
+    // shower
+    // brush teeth
+    // pick up clothes
+    // get dressed
+    // make breakfast
+    // make coffee
+    // clean up kitchen
+    // take kaycee for walk
+    // leave for school
 
 // Split up into categories
 

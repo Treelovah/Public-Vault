@@ -21,23 +21,26 @@ int main() {
 // lets iterate over the array 'scores' and then do math.
 namespace score_sheet {
     const unsigned int scores[] = {84, 92, 76, 81, 56};
-    double num_students = std::size(scores);
-    double total_score = 0;
-    double total_average = 0;
+    double num_students = std::size(scores); // this requires compiler to be >= c++17
+    double total_score;
+    double total_average;
 }
 int total_score() {
     for (int i : score_sheet::scores) {
         score_sheet::total_score += i;
     }
     return score_sheet::total_score;
-
 }
+
 int average_score() {
     score_sheet::total_average = (total_score() / score_sheet::num_students);
     return score_sheet::total_average;
 }
 int main() {
-    std::cout <<  "total score: " << total_score() << '\n';
+    std::cout << "Total Scores: \n";
+    for (int i : score_sheet::scores) {
+        std::cout << i << '\n';
+    }
     std::cout << "total average score: " << average_score() << '\n';
 }
 

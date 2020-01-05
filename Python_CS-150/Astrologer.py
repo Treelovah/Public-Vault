@@ -77,3 +77,4 @@ print("======Part Two======")
 print(astro_1.aries())
 print(astro_1.leo())
 print(astro_1.sagittarius())
+# Finished

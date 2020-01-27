@@ -1,25 +1,117 @@
 #include <iostream>
-#include <fstream>
 #include <string>
-#include "calendar.cpp"
+#include <vector>
+using namespace std;
 
-int main(int argc, char const *argv[])
+//global variables
+string programName;
+
+//Using parameter values, creates viable date
+void dateCalculate(string stringDay, string stringYear)
 {
-    // date_test();
-    date_test2();
-    return 0;
+  //Vectors to hold values for evaluating proper date
+  vector<vector<int>> months {
+    {31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365},
+    {31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366}
+  };
+  vector<string> days {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+
+  string stringMonth, numMonth, dayOfMonth;
+  bool leapYear = false;
+
+  //check if leapYear
+  if((stoi(stringYear) % 400 == 0) || ((stoi(stringYear) % 4 == 0) && stoi(stringYear) % 100 != 0)) leapYear = true;
+
+  //Check for out of bounds on year or day
+  if(stoi(stringYear) < 1 || stoi(stringYear) > 9999){
+    cerr << programName << " Year out of bounds (1 - 9999): " << stringYear << "\n";
+    exit(0);
+  }
+
+  if(leapYear && (stoi(stringDay) < 1 || stoi(stringDay) > 366)){
+    cerr << programName << " Day out of bounds (1 - 366): " << stringYear << "\n";
+    exit(0);
+  }else if(!leapYear && (stoi(stringDay) < 1 || stoi(stringDay) > 365)){
+    cerr << programName << " Day out of bounds (1 - 365): " << stringYear << "\n";
+    exit(0);
+  }
+
+  //Determine month and day of month
+  if(stoi(stringDay) <= months[leapYear][0]){
+    stringMonth ="Jan"; numMonth = "1"; dayOfMonth = stringDay;
+  }else if(stoi(stringDay) <= months[leapYear][1]){
+    stringMonth = "Feb"; numMonth = "2"; dayOfMonth = to_string(stoi(stringDay) - months[leapYear][0]);
+  }else if(stoi(stringDay) <= months[leapYear][2]){
+    stringMonth = "Mar"; numMonth = "3"; dayOfMonth = to_string(stoi(stringDay) - months[leapYear][1]);
+  }else if(stoi(stringDay) <= months[leapYear][3]){
+    stringMonth = "Apr"; numMonth = "4"; dayOfMonth = to_string(stoi(stringDay) - months[leapYear][2]);
+  }else if(stoi(stringDay) <= months[leapYear][4]){
+    stringMonth = "May"; numMonth = "5"; dayOfMonth = to_string(stoi(stringDay) - months[leapYear][3]);
+  }else if(stoi(stringDay) <= months[leapYear][5]){
+    stringMonth = "Jun"; numMonth = "6"; dayOfMonth = to_string(stoi(stringDay) - months[leapYear][4]);
+  }else if(stoi(stringDay) <= months[leapYear][6]){
+    stringMonth = "Jul"; numMonth = "7"; dayOfMonth = to_string(stoi(stringDay) - months[leapYear][5]);
+  }else if(stoi(stringDay) <= months[leapYear][7]){
+    stringMonth = "Aug"; numMonth = "8"; dayOfMonth = to_string(stoi(stringDay) - months[leapYear][6]);
+  }else if(stoi(stringDay) <= months[leapYear][8]){
+    stringMonth = "Sep"; numMonth = "9"; dayOfMonth = to_string(stoi(stringDay) - months[leapYear][7]);
+  }else if(stoi(stringDay) <= months[leapYear][9]){
+    stringMonth = "Oct"; numMonth = "10"; dayOfMonth = to_string(stoi(stringDay) - months[leapYear][8]);
+  }else if(stoi(stringDay) <= months[leapYear][10]){
+    stringMonth = "Nov"; numMonth = "11"; dayOfMonth = to_string(stoi(stringDay) - months[leapYear][9]);
+  }else if(stoi(stringDay) <= months[leapYear][11]){
+    stringMonth = "Dec"; numMonth = "12"; dayOfMonth = to_string(stoi(stringDay) - months[leapYear][10]);
+  }else {
+    numMonth = "-1"; dayOfMonth = "-1";
+  }
+
+  if(dayOfMonth.length() == 1) dayOfMonth = "0" + dayOfMonth;
+
+  //Use mktime to evaluate day of the week
+  tm timeData = {};
+  timeData.tm_year = stoi(stringYear) - 1900;
+  timeData.tm_mon = stoi(numMonth) - 1;
+  timeData.tm_mday = stoi(dayOfMonth);
+  mktime(&timeData);
+
+  cout << days[timeData.tm_wday] << " " << dayOfMonth << " " << stringMonth << " " << stringYear << "\n";
 }
 
-// First things first.
-// Take data from data.txt
-// The input from data.txt is year.day
-// So the first one sohuld be 248th day in the year 476
-// needs to be based on gregorian calendar, (dow, dom, mon, yr)
-// The first should be 'Fri 04 Sep 0476'
+//parse input for year/day values
+void parseInput(string line)
+{
+    bool marker = false;
+    bool endOfPadding = false;
+    string stringYear, stringDay;
 
-// make a 2 lists, one regular year, one leap year
-// each month should hold days. (jan holds 31, feb holds 28 (except on leapyear) etc.)
-// use the '.' as the delimeter to separate year from days on input
-// write if/else statements to check if year is leap year or not, and if so...
-// nested if/else will assign the rest of the dates
+    for(int i=0; i < int(line.length()); i++){
+      if(line[i] != '.' && !isdigit(line[i])){
+        cerr << programName << " Improper character in input: " << line[i] << "\n";
+        exit(0);
+      }
+      if(!endOfPadding && line[i] != '0') endOfPadding = true;
+      if(endOfPadding){
+        if(line[i] == '.'){
+          marker = true;
+          endOfPadding = false;
+        }
+        else if(!(marker)) stringYear += line[i];
+        else stringDay += line[i];
+      }
+    }
 
+    while(stringYear.length() < 4) stringYear = "0" + stringYear;
+
+    dateCalculate(stringDay, stringYear);
+}
+
+//Main
+int main(int argc, char* argv[])
+{
+  programName = argv[0];
+  (void)argc;
+  string line;
+  while(getline(cin, line)) parseInput(line);
+
+  return 0;
+}

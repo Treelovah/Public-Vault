@@ -10,7 +10,7 @@ int split_string(std::string data) {
     int day {stoi(data.substr(data.find(delim), -1).erase(0, 1))};
     std::string str_day {std::to_string(day)};
     std::string str_year {std::to_string(year)};
-    proper_date(str_year, str_day);
+    proper_date(*&str_year, *&str_day);
     return 0;
 }
 
@@ -32,7 +32,7 @@ int proper_date(std::string str_year, std::string str_day) {
         std::cerr << "Day is out of bounds";
     }
     std::string date = str_year.append('.' + str_day);
-    get_date(date);
+    get_date(*&date);
     return 0;
 }
 

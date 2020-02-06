@@ -30,7 +30,8 @@ Note: This zyLab outputs a newline after each user-input prompt. For convenience
 
 */
 import java.util.Scanner;
-import java.lang.Math;     // Note: Needed for math functions in part (3)
+// import java.lang.Math;     // Note: Needed for math functions in part (3)
+// This is not needed ^^
 
 public class PaintEstimator {
    public static void main(String[] args) {
@@ -43,19 +44,20 @@ public class PaintEstimator {
       System.out.println("Enter wall height (feet):");
       wallHeight = scnr.nextDouble();
       System.out.println("Enter wall width (feet):");
-      wallWidth = scnr.nextDouble();                      // FIXME (1): Prompt user to input wall's width
+      wallWidth = scnr.nextDouble();
+      scnr.close();
       
       // Calculate and output wall area
-      wallArea = wallHeight * wallWidth;                        // FIXME (1): Calculate the wall's area
-      System.out.printf("Wall area: %.1f square feet\n",wallArea);     // FIXME (1): Finish the output statement
+      wallArea = wallHeight * wallWidth;
+      System.out.printf("Wall area: %.1f square feet\n",wallArea);
       
       paintNeeded = wallArea / 350.00;
-      System.out.println("Paint needed: " + paintNeeded + " gallons");// FIXME (2): Calculate and output the amount of paint in gallons needed to paint the wall
+      System.out.println("Paint needed: " + paintNeeded + " gallons");
       
       if (paintNeeded > 0.0 && paintNeeded < 1.0) {
          System.out.printf("Cans needed: %d can(s)\n",(int)paintNeeded + 1);
       } else {
-         System.out.printf("Cans needed: %d can(s)\n",(int)paintNeeded + 1);// FIXME (3): Calculate and output the number of 1 gallon cans needed to paint the wall, rounded up to nearest integer
+         System.out.printf("Cans needed: %d can(s)\n",(int)paintNeeded + 1);
       }
    }
 }

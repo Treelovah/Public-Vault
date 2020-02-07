@@ -8,8 +8,8 @@ void get_date(std::string date) {
     constexpr int lmonths[12] {31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366};
     std::string month {};
     constexpr char delim {'.'};
-    int year {stoi(date.substr(0, date.find(delim)))};
-    int day {stoi(date.substr(date.find(delim), -1).erase(0, 1))};
+    int year {stoi(date.substr(0, date.find(delim)))}; // this will separate and get the first half of input () 
+    int day {stoi(date.substr(date.find(delim), -1).erase(0, 1))}; // this will grab the back half of the input
     //check if leap year
     if (!leap_year(year)) {
         // go through regular year list

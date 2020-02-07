@@ -1,14 +1,13 @@
 #include <iostream>
-#define area(r) (3.14*r*r)
-
+// fuck these are cool:
+// #define area(r) (3.14*r*r)
 using namespace std;
-
-int main(){
-	int radius;
-  	float area;
-  	cout << "Enter radius of circle" << endl;
-  	cin >> radius;
-  	area = area(radius);
-  	cout << "Area of circle is " << area << endl;
-	return 0;
+#include <math.h>
+int main(int argc, char const *argv[])
+{
+    int x = 5;
+    int a = *&x;
+    a = std::pow((double)a, 2.0);
+    cout << a << " " << x << '\n';
+    return 0;
 }

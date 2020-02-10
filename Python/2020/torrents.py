@@ -1,5 +1,7 @@
 #!/bin/python
 
+# Simple script to get torrents from yifi.
+
 import requests, json, argparse
 
 class Scrape:
@@ -7,14 +9,14 @@ class Scrape:
         pass
 
     def list_movies(self, page):
-        r = requests.get(f"https://yts.lt/api/v2/list_movies.json?page={page}&sort_by=like_count").json()
+        r = requests.get(f"https://yts.mx/api/v2/list_movies.json?page={page}&sort_by=like_count").json()
         i = 0
         while i <= 18:
             print(json.dumps(r['data']['movies'][i]['title_long'], indent=2))
             i += 1
 
     def list_movies_torrents(self, page):
-        r = requests.get(f"https://yts.lt/api/v2/list_movies.json?page={page}&sort_by=like_count").json()
+        r = requests.get(f"https://yts.mx/api/v2/list_movies.json?page={page}&sort_by=like_count").json()
         i = 0
         while i <= 18:
             movie_hash = json.dumps(r['data']['movies'][i]['torrents'][0]['hash'], indent=2)
@@ -23,7 +25,7 @@ class Scrape:
             i += 1
     
     def search_movies_torrents(self, movie_name):
-        r = requests.get(f"https://yts.lt/api/v2/list_movies.json?query_term={movie_name}").json()
+        r = requests.get(f"https://yts.mx/api/v2/list_movies.json?query_term={movie_name}").json()
         i = 0
         while i <= 20:
             try:
@@ -35,7 +37,7 @@ class Scrape:
                 break
 
     def search_movies(self, movie_name):
-        r = requests.get(f"https://yts.lt/api/v2/list_movies.json?query_term={movie_name}").json()
+        r = requests.get(f"https://yts.mx/api/v2/list_movies.json?query_term={movie_name}").json()
         i = 0
         while i <= 20:
             try:

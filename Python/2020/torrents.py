@@ -30,7 +30,7 @@ class Scrape:
         while i <= 20:
             try:
                 movie_hash = json.dumps(r['data']['movies'][i]['torrents'][0]['hash'], indent=2)
-                movie_mag = f"magnet:?xt=urn:btih:{movie_hash}&dn=Url+Encoded+Movie+Name&tr=http://track.one:1234/announce&tr=udp://track.two:80"
+                movie_mag = f"magnet:?mx=urn:btih:{movie_hash}&dn=Url+Encoded+Movie+Name&tr=http://track.one:1234/announce&tr=udp://track.two:80"
                 print(movie_mag)
                 i += 1
             except:

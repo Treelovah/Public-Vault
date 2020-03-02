@@ -1,13 +1,22 @@
+/*
+Write a program to call a function triple_it that takes the address of an int and triples the value pointed to.
+Test it by passing an argument n, which is initialized to 15.
+Print out the value of n before and after the function is called. 
+(Hint: The function should look similar to double_it in)
+*/
+
 #include <iostream>
-// fuck these are cool:
-// #define area(r) (3.14*r*r)
-using namespace std;
-#include <math.h>
-int main(int argc, char const *argv[])
-{
-    int x = 5;
-    int a = *&x;
-    a = std::pow((double)a, 2.0);
-    cout << a << " " << x << '\n';
+
+void triple_it(int *n);
+
+int main() {
+    int a = 15;
+    printf("'a' before triple is: %d\n",a);
+    triple_it(&a);
+    printf("'a' after triple is: %d\n",a);
     return 0;
+}
+
+void triple_it(int *n) {
+    *n = *n * 3;
 }

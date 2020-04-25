@@ -11,6 +11,6 @@ public class OrderStrings {
 
       String response = (firstString.compareToIgnoreCase(secondString) < 97) ? "Yes" : "no";
       System.out.println(response);
-
+      scnr.close();
    }
 }

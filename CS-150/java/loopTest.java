@@ -1,6 +1,5 @@
-import java.util.*;
 class loopTest {
-    public static void loopTest() {
+    public static void main(String[] args) {
         String[] doctors = new String[13];
 
         doctors[0] = "William Hartnell";
@@ -11,15 +10,16 @@ class loopTest {
         doctors[10] = "Matt Smith";
         doctors[12] = "Jodie Whittaker";
 
-        for(int i = 0; i < doctors.length; i++) {
-            if(doctors[i] != null && doctors[i].startsWith("Chris")) {
+        for (int i = 0; i < doctors.length; i++) {
+            if (doctors[i] != null && doctors[i].startsWith("Chris")) {
                 System.out.println("Don't forget John Hurt");
             }
         }
 
         String print2 = "";
-        for (int i = doctors.length-1; i > 1; i /=2) {
-            if ( i % 2 != 0) i++;
+        for (int i = doctors.length - 1; i > 1; i /= 2) {
+            if (i % 2 != 0)
+                i++;
             print2 += String.valueOf(doctors[i]).charAt(0);
         }
         System.out.println(print2);
@@ -27,21 +27,20 @@ class loopTest {
         String print3 = "";
         int i = 1;
         while (print3.isEmpty()) {
-            if (doctors[i] == null) i += 2;
-            else print3 += doctors[i].split("0")[0];
-            if (i > 12) i = 12;
+            if (doctors[i] == null)
+                i += 2;
+            else
+                print3 += doctors[i].split("0")[0];
+            if (i > 12)
+                i = 12;
         }
         System.out.println(print3);
         String print4 = "";
         do {
-            print4 = String.format("Doctor %d is %s", i+1, doctors[i]);
+            print4 = String.format("Doctor %d is %s", i + 1, doctors[i]);
             i++;
-        }while (i < 12);
+        } while (i < 12);
         System.out.println(print4);
-    }
-
-    public static void main(String[] args) {
-        loopTest();
     }
 
     // public static void arrayPtest() {

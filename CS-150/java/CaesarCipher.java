@@ -46,5 +46,6 @@ public class CaesarCipher {
     shift(2, scnr.nextLine());
     System.out.println();
     unShift(2, scnr.nextLine());
+    scnr.close();
   }
 }

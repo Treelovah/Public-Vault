@@ -24,5 +24,6 @@ public class GCDCalc {
       }
 
       System.out.println("GCD is: " + numA);
+      scnr.close();
    }
 }

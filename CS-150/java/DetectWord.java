@@ -9,5 +9,6 @@ public class DetectWord {
         userString = scnr.next();
         String response = (userString.equals("Quit")) ? "Goodbye" : "Hello";
         System.out.print(response);
-        }
+        scnr.close();    
+    }
 }

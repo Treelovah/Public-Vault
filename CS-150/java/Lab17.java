@@ -1,4 +1,4 @@
-import java.util.Random;
+// import java.util.Random; File Dependant
 import java.util.Scanner;
 import java.io.File; // this was deleted...whoops. I have no way of recovering.
 
@@ -13,7 +13,7 @@ class Lab17 {
 
             while (fileReader.hasNextLine()) {
 
-                fileData[index] = fileReader.nextInt();
+                // fileData[index] = fileReader.nextInt(); File Dependant
 
                 fileReader.nextLine();
 
@@ -21,13 +21,13 @@ class Lab17 {
 
             }
 
-            for (int i = 0; i < fileData.length; i++)
+            // for (int i = 0; i < fileData.length; i++) // File Dependant
 
-                sum += fileData[i];
+                // sum += fileData[i]; // File Dependant
 
             fileReader.close();
 
-            System.out.println(sum / fileData.length);
+            // System.out.println(sum / fileData.length); // File Dependant
 
         } catch (Exception e) {
 

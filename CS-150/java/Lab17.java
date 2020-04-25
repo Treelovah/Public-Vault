@@ -1,6 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
-import java.io.File;
+import java.io.File; // this was deleted...whoops. I have no way of recovering.
 
 class Lab17 {
     public static void readFileAndCalcAverage(String filename) {

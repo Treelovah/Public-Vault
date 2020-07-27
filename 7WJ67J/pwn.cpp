@@ -1,7 +1,6 @@
-#include <iostream>
-#include <string>
+#include <cstdio>
 
-int main(int argc, char const *argv[])
+int main()
 {
 	char a = 0x00;
 	char b = 0x13;

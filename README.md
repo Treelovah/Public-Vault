@@ -1,2 +1,2 @@
-# Scripts
-Bash, Python & CPP Programs for practice, education, and just to make my life easier.
+# &>/dev/null&
+Bash, Python & CPP one-liners, quick scripts, fun challenges, mostly nonsense.

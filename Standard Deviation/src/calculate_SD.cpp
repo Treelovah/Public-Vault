@@ -56,8 +56,9 @@ float calculate_SD::median(vector<float> &v, int m, int n)
         return list_mean;
     } else
     {
-        int upper{ ((tmp.size() - 1) / 2) + 1 }; // narrowing intended
-        int lower{ ((tmp.size() - 1) / 2) }; // narrowing intended
+        int upper, lower;
+        upper = (int)((tmp.size() - 1) / 2) + 1; // narrowing intended
+        lower = (int)((tmp.size() - 1) / 2); // narrowing intended
         list_mean = (tmp.at(lower) + tmp.at(upper)) / 2;
         return list_mean;
     }

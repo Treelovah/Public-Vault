@@ -1,3 +1,4 @@
+#pragma GCC diagnostic ignored "-Wnarrowing"
 #ifndef CALCULATE_SD_H
 #define CALCULATE_SD_H
 #include <vector>
